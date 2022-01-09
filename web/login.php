@@ -36,7 +36,25 @@ E-mail: info@remotesyslog.com
                 <link href='<?php echo ($url . "/style.css"); ?>' rel="stylesheet" type="text/css">
         </head>
 <!-- Site main -->
-<body VLINK= "#000000" ALINK="#000000">
+<style>
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: gainsboro;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+<body>
 <center>
         <br></br>
         <img src='<?php echo ($url . "/logo.png"); ?>' width="280" height="280" title="Logo" alt="Logo of RSX" />
@@ -74,11 +92,11 @@ $form = <<<EOT
         <label for="username">
         <i class="fas fa-user"></i>
         </label>
-        \t<input name="user" type="text" placeholder="Username" required/>
+        \t<input name="user" type="text" placeholder="Username" required pattern="[A-Za-z0-9@_-.]{0,30}"/>
         <label for="password">
         <i class="fas fa-lock"></i>
         </label>
-        \t<input name="pwd"  type="password" placeholder="Password" required/>
+        \t<input name="pwd"  type="password" placeholder="Password" required pattern="[A-Za-z0-9_.-=!@#$%^*()+?]{0,100}"/>
         \t<input type="submit" value="Login"/>
 </form>
 EOT;
@@ -91,7 +109,7 @@ EOT;
 echo "RSX 0.1 - T.Slenter - https://www.remotesyslog.com/";
 echo "<br />\n";
 echo "<br />\n";
-echo "<a href='https://github.com/tslenter/RSX-RSC/blob/master/README.md' target='_blank'>Donate and help</a>";
+echo "<a href='https://github.com/tslenter/RS/blob/main/README.md' target='_blank'>Donate and help</a>";
 ?>
 </center>
 </body>

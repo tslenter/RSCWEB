@@ -366,7 +366,7 @@ class PHPTail {
                            <li><a href="remote_syslog/">Archive</a></li>
                            <li><a href="?check1=tes <?php if (isset($_GET['check1'])) { if ($_GET['check1'] == "tes") { exec('logger -n 127.0.0.1 -d "This is a UDP test message!"; logger -T -P 514 -n 127.0.0.1 "This is a TCP test message!"'); } } $check1=""; ?>">Test message</a></li>
                            <li><a href="?check2=rml <?php if (isset($_GET['check2'])) { if ($_GET['check2'] == "rml") { exec('rm -rf /var/log/remote_syslog/remote_syslog.log.*'); } } $check2=""; ?>">Clear live log archive</a></li>
-                           <li><a href="https://github.com/tslenter/RSX-RSC/blob/master/LICENSE" target="_blank">License</a></li>
+                           <li><a href="https://github.com/tslenter/RS/blob/main/LICENSE" target="_blank">License</a></li>
                         </ul>
                     </li>
                     <li><a href="logout.php">Logout</a></li>
@@ -393,7 +393,7 @@ class PHPTail {
     </div>
     <div align="center">
         <br></br>
-        <?php echo "<font color=\"silver\">Remote Syslog Classic v0.1 - <a href='https://github.com/tslenter/RSX-RSC/blob/master/README.md' style='color: lightgrey' target='_blank'>Donate and help</a></font><br>"; ?>
+        <?php echo "<font color=\"silver\">Remote Syslog Classic v0.1 - <a href='https://github.com/tslenter/RS/blob/main/README.md' style='color: lightgrey' target='_blank'>Donate and help</a></font><br>"; ?>
         <br></br>
     </div>
 <script src="bootstrap.min.js"></script>
