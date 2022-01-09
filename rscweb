@@ -29,6 +29,7 @@ APACHCONF=/var/www/html
 APACONFIG=/etc/apache2/sites-available
 RSBIN=/usr/bin
 APACHPHP=/etc/php/7.[0-9]/apache2
+VLOG=/var/log
 
 #Banner
 function banner() {
@@ -101,6 +102,8 @@ function check_file_gui() {
 #Enroll functions
 function rscinstall() {
 #Check installation conflics ...
+    echo "Check if RSE is installed ..."
+    check_file_gui $APACHCONF/rse/index.php
     echo "Check if RSX is installed ..."
     check_file_gui $SYSLOGCONF/99RSX-rs.conf
     echo "Check if RSC is installed ..."
@@ -230,6 +233,8 @@ function rscinstall() {
 
 function rscremove() {
 #Check removal steps ...
+    echo "Check if RSE is installed ..."
+    check_file_gui $APACHCONF/rse/index.php
     echo "Check if RSX is installed ..."
     check_file_gui $SYSLOGCONF/99RSX-rs.conf
     echo "Check if RSC is installed"
@@ -239,7 +244,7 @@ function rscremove() {
     rm -rf $APACHCONF/rsc/
 #Check core install
     echo "Removing installation RSC ..."
-    if [ -e "$RSBIN/rsinstaller" ]; then
+    if [ -e "$RSBIN/rsview" ]; then
         echo "Core still installed ..."
         apt -y purge apache2 apache2-utils php libapache2-mod-php libapache2-mod-authnz-external php apache2 libapache2-mod-authz-unixgroup php-cli libpam0g-dev php-pear php-dev libapache2-mod-php build-essential
         apt -y install syslog-ng
@@ -341,7 +346,6 @@ function pre_install() {
 	check_package "syslog-ng"
 	check_package "wget"
 	check_package "git"
-	check_package "elasticsearch"
 	check_file "$RSBIN/rsview"
 	check_file "$RSCCORE/rsccore"
 }
