@@ -36,7 +36,7 @@ E-mail: info@remotesyslog.com
                 <link href='<?php echo ($url . "/style.css"); ?>' rel="stylesheet" type="text/css">
         </head>
 <!-- Site main -->
-<body VLINK= "#000000" ALINK="#000000">
+<body link="#000000" vlink="#000000" alink="#000000">
 <center>
         <br></br>
         <img src='<?php echo ($url . "/logo.png"); ?>' width="280" height="280" title="Logo" alt="Logo of RSX" />

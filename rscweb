@@ -158,7 +158,6 @@ function rscinstall() {
     echo "Copy files ..."
     cp -rf $RSDEST/web/* $APACHCONF/
     check_file_reverse $APACHCONF/index.html
-    check_file $APACHCONF/login.php
     check_file $APACHCONF/index.php
     check_file $APACHCONF/logo.png
     check_file $APACHCONF/favicon.ico
@@ -309,7 +308,6 @@ function guiupgrade() {
         echo "Update webpage code ..."
         cp -rf $RSDEST/web/* $APACHCONF/
         check_file_reverse $APACHCONF/index.html
-        check_file $APACHCONF/login.php
         check_file $APACHCONF/index.php
         check_file $APACHCONF/logo.png
         check_file $APACHCONF/favicon.ico

@@ -106,10 +106,11 @@ EOT;
 </div>
 <center>
 <?php
-echo "RSX 0.1 - T.Slenter - https://www.remotesyslog.com/";
+echo "RSC 0.1 - T.Slenter - https://www.remotesyslog.com/";
 echo "<br />\n";
 echo "<br />\n";
 echo "<a href='https://github.com/tslenter/RS/blob/main/README.md' target='_blank'>Donate and help</a>";
+<?php echo "<font color=\"silver\">Remote Syslog Classic v0.1 - <a href='https://github.com/tslenter/RS/blob/main/README.md' target='_blank'>Donate and help</a></font><br>"; ?>
 ?>
 </center>
 </body>
