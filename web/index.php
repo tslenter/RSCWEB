@@ -28,10 +28,18 @@ E-mail: info@remotesyslog.com
                 <title>Remote Syslog Classic</title>
         </head>
 <body>
+
 <?php
+session_start();
+if (isset($_SESSION['id']) && $_SESSION['un'] == true) {
+    $location = "";
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $location . "rsc/rsc.php");
+} else {
     $location = "";
     header('HTTP/1.1 301 Moved Permanently');
     header('Location: ' . $location . "rsc");
+}
 ?>
 </body>
 </html>

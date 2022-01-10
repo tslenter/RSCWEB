@@ -27,6 +27,15 @@ E-mail: info@remotesyslog.com
         $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 ?>
 
+<?php
+session_start();
+if (isset($_SESSION['id']) && $_SESSION['un'] == true) {
+    $location = "";
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $location . "rsc.php");
+}
+?>
+
 <!-- Header info -->
 <html>
         <head>
