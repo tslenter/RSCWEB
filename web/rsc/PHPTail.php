@@ -383,7 +383,7 @@ class PHPTail {
         <div id="out" class="out"></div>
         <div id="settings" title="RSC Filter">
             <p>Filter word: (return results that contain this keyword)</p>
-            <input id="grep" type="text" value="" />
+            <input id="grep" type="text" placeholder="Search.." value="">
             <p>Should the filter be inverted? (Return results that do NOT contain the keyword)</p>
             <div id="invert">
                 <input type="radio" value="1" id="invert1" name="invert" /><label for="invert1">Yes</label>
@@ -402,3 +402,4 @@ class PHPTail {
         <?php
     }
 }
+
