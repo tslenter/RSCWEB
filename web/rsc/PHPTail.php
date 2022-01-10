@@ -393,7 +393,7 @@ class PHPTail {
     </div>
     <div align="center">
         <br></br>
-        <?php echo "<font color=\"silver\">Remote Syslog Classic v0.1 - <a href='https://github.com/tslenter/RS/blob/main/README.md' style='color: lightgrey' target='_blank'>Donate and help</a></font><br>"; ?>
+        <?php echo "<font color=\"silver\">Remote Syslog Classic v0.2 - <a href='https://github.com/tslenter/RS/blob/main/README.md' style='color: lightgrey' target='_blank'>Donate and help</a></font><br>"; ?>
         <br></br>
     </div>
 <script src="bootstrap.min.js"></script>

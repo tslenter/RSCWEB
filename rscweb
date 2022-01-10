@@ -38,7 +38,7 @@ function banner() {
     echo "#Remote Syslog Classic                           #"
     echo "#More information: https://www.remotesyslog.com  #"
     echo "#Remote Syslog installation webservice           #"
-    echo "#Version: RSC 0.1                                #"
+    echo "#Version: RSC 0.2                                #"
     echo "#Donations: https://github.com/tslenter/RSCWEB   #"
     echo "##################################################"
     echo ""
@@ -226,6 +226,9 @@ function rscinstall() {
     echo "Load modules ..."
     a2enmod rewrite
     a2enmod ssl
+    a2enmod session
+    a2enmod session_cookie
+    a2enmod session_crypto
     service apache2 restart
     echo "Done ..."
 }
@@ -328,6 +331,15 @@ function guiupgrade() {
         check_file $APACHCONF/rsc/rsc.php
         check_file $APACHCONF/rsc/logout.php
         echo "Done ..."
+        echo "Upgrade config ..."
+        cp -rf $RSDEST/config/rsc-apache.conf $APACONFIG/rsc-apache.conf
+        check_file $APACONFIG/rsc-apache.conf
+        echo "Load modules ..."
+        a2enmod rewrite
+        a2enmod ssl
+        a2enmod session
+        a2enmod session_cookie
+        a2enmod session_crypto
         echo "Restarting Apache ..."
         service apache2 restart
         echo "Restarting Syslog-NG ..."

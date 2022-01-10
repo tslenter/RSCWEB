@@ -97,7 +97,7 @@ EOT;
 </div>
 <center>
 <?php
-echo "Remote Syslog Classic 0.1 - T.Slenter - https://www.remotesyslog.com/";
+echo "Remote Syslog Classic 0.2 - T.Slenter - https://www.remotesyslog.com/";
 echo "<br />\n";
 echo "<br />\n";
 echo "<a href='https://github.com/tslenter/RSX-RSC/blob/master/README.md' target='_blank'>Donate and help</a>";
