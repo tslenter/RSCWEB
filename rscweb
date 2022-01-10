@@ -367,7 +367,7 @@ function extentphplimit() {
     echo "Check if RSX is installed ..."
     check_file_gui $SYSLOGCONF/99RSX-rs.conf
     echo "Check if RSC is installed ..."
-    check_file_reverse $APACHCONF/rsc/index.php
+    check_file $APACHCONF/rsc/index.php
     echo "Extent PHP limit to 512M ..."
     check_file $APACHPHP/php.ini
     echo "Setting PHP limit to 512M ..."
@@ -383,7 +383,7 @@ function restorephplimit() {
     echo "Check if RSX is installed ..."
     check_file_gui $SYSLOGCONF/99RSX-rs.conf
     echo "Check if RSC is installed ..."
-    check_file_reverse $APACHCONF/rsc/index.php
+    check_file $APACHCONF/rsc/index.php
     echo "Restoring PHP limit to default values 128M ..."
     check_file $APACHPHP/php.ini
     echo "Setting PHP limit to 128M ..."
