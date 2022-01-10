@@ -360,6 +360,38 @@ function pre_install() {
 	check_file "$RSCCORE/rsccore"
 }
 
+#FIX for larger RSC searches
+function extentphplimit() {
+    echo "Check if RSE is installed ..."
+    check_file_gui $APACHCONF/rse/index.php
+    echo "Check if RSX is installed ..."
+    check_file_gui $SYSLOGCONF/99RSX-rs.conf
+    echo "Check if RSC is installed ..."
+    check_file_reverse $APACHCONF/rsc/index.php
+    echo "Extent PHP limit to 512M ..."
+    check_file $APACHPHP/php.ini
+    echo "Setting PHP limit to 512M ..."
+    sed -i '/memory_limit/c\\memory_limit = 512M' $APACHPHP/php.ini
+    echo "Restarting webservices ..."
+    service apache2 restart
+}
+
+#Restore FIX for larger RSC searches
+function restorephplimit() {
+    echo "Check if RSE is installed ..."
+    check_file_gui $APACHCONF/rse/index.php
+    echo "Check if RSX is installed ..."
+    check_file_gui $SYSLOGCONF/99RSX-rs.conf
+    echo "Check if RSC is installed ..."
+    check_file_reverse $APACHCONF/rsc/index.php
+    echo "Restoring PHP limit to default values 128M ..."
+    check_file $APACHPHP/php.ini
+    echo "Setting PHP limit to 128M ..."
+    sed -i '/memory_limit/c\\memory_limit = 128M' $APACHPHP/php.ini
+    echo "Restarting webservices ..."
+    service apache2 restart
+}
+
 #Thank you message
 function quit() {
     echo "Thank you for using Remote Syslog ..."
@@ -388,7 +420,7 @@ clear
 banner
 #Menu
 PS3='Please enter your choice: '
-options=("Upgrade RSC WEB" "Install RSC WEB" "Remove RSC WEB" "Quit")
+options=("Upgrade RSC WEB" "Install RSC WEB" "Remove RSC WEB" "Set new memory PHP limit of 512M" "Set default PHP memory limit of 128M" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -412,6 +444,20 @@ do
             clear
             banner
             rscremove
+            exit
+    ;;
+        "Set new memory PHP limit of 512M")
+            clear
+            banner
+            extentphplimit
+            quit
+            exit
+    ;;
+        "Set default PHP memory limit of 128M")
+            clear
+            banner
+            restorephplimit
+            quit
             exit
     ;;
         "Quit")
