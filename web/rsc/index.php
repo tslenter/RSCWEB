@@ -83,11 +83,11 @@ $form = <<<EOT
         <label for="username">
         <i class="fas fa-user"></i>
         </label>
-        \t<input name="user" type="text" placeholder="Username" pattern="[a-zA-Z0-9!@#$%^&*_=+-]{1,100}" title="Some special characters are disabled ..." required>
+        \t<input name="user" type="text" placeholder="Username" pattern="[a-zA-Z0-9!@#$%^&*_=+-]{1,100}" title="Some special characters are disabled ..." required/>
         <label for="password">
         <i class="fas fa-lock"></i>
         </label>
-        \t<input name="pwd"  type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{4,100}" title="Password must match capital letter - lower letter - number - special character ..." required>
+        \t<input name="pwd"  type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{4,100}" title="Password must match capital letter - lower letter - number - special character ..." required/>
         \t<input type="submit" value="Login"/>
 </form>
 EOT;
